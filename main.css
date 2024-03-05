@@ -73,6 +73,17 @@ input:invalid {
   box-shadow: none;
 }
 
+table {
+  border: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: initial;
+}
+
 /* basic setting */
 /* 使用@each 產出css size設定 */
 .w-25 {
@@ -669,7 +680,7 @@ body {
 }
 
 .d-inline-block {
-  display: inline-blockt;
+  display: inline-block;
 }
 
 .d-block {
@@ -744,17 +755,22 @@ body {
   cursor: pointer;
 }
 
+#main-app {
+  height: 100%;
+}
+
 /* Navbar */
 .sidebar {
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   width: 100px;
   background-color: #03396a;
   padding-top: 30px;
   height: 100%;
 }
 .sidebar .sidebar-logo {
-  min-width: 64px;
+  min-height: 64px;
   max-width: 100%;
   margin-bottom: 83px;
 }
@@ -773,4 +789,18 @@ body {
 }
 .sidebar .sidebar-menu .active {
   background-color: #fff;
+}
+
+/* main */
+#main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 50px 68px 150px;
+}
+#main .main-title {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */

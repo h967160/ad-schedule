@@ -9,38 +9,103 @@
 </head>
 
 <body>
-  <nav class="sidebar">
-    <div class="sidebar-logo">
-      <a class="home" href="#">
-        <img
-          src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/logo.svg"
-          alt="">
-      </a>
-    </div>
-    <div class="sidebar-menu d-flex flex-column align-items-center">
-      <div class="frame-box active">
-        <a class="frame" href="#">
+  <div id="main-app">
+    <!-- Navbar -->
+    <nav class="sidebar d-flex flex-column">
+      <div class="sidebar-logo">
+        <a class="home" href="#">
           <img
-            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/frame.svg"
-            alt="frame">
+            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/logo.svg"
+            alt="">
         </a>
       </div>
-      <div class="folder-box">
-        <a class="folder" href="#">
-          <img
-            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/folder.svg"
-            alt="folder">
-        </a>
+      <div class="sidebar-menu d-flex flex-column align-items-center">
+        <div class="frame-box active">
+          <a class="frame" href="#">
+            <img
+              src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/frame.svg"
+              alt="frame">
+          </a>
+        </div>
+        <div class="folder-box">
+          <a class="folder" href="#">
+            <img
+              src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/folder.svg"
+              alt="folder">
+          </a>
+        </div>
+        <div class="mail-box">
+          <a class="mail" href="#">
+            <img
+              src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/mail.svg"
+              alt="mail">
+          </a>
+        </div>
       </div>
-      <div class="mail-box">
-        <a class="mail" href="#">
-          <img
-            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/mail.svg"
-            alt="mail">
-        </a>
+    </nav>
+    <!-- Main -->
+    <main id="main">
+      <div class="main-title">
+        <h1>Campaign</h1>
       </div>
-    </div>
-  </nav>
+      <div class="main-wrapper">
+        <table class="main-table">
+          <thead>
+            <tr class="table-row table-header">
+              <th class="table-cell table-cell-checkbox">
+                <input type="checkbox">
+              </th>
+              <th class="table-cell table-cell-id">ID</th>
+              <th class="table-cell table-cell-name">Name</th>
+              <th class="table-cell table-cell-advertiser">
+                <span class="advertiser-name">Advertiser</span>
+                <span class="advertiser-group">Group</span>
+              </th>
+              <th class="table-cell table-cell-description">Description</th>
+              <th class="table-cell table-cell-price">
+                <span>Price</span>
+                <img class="sort-icon"
+                  src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/main/icons/sort.svg" alt="">
+              </th>
+              <th class="table-cell table-cell-start-time">
+                <span>Start Time</span>
+                <img class="sort-icon"
+                  src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/main/icons/sort.svg" alt="">
+              </th>
+              <th class="table-cell table-cell-end-time">
+                <span>End Time</span>
+                <img class="sort-icon"
+                  src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/main/icons/sort.svg" alt="">
+              </th>
+              <th class="table-cell table-cell-action">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row">
+              <td class="table-cell table-cell-checkbox">
+                <input type="checkbox">
+              </td>
+              <td class="table-cell table-cell-id">1</td>
+              <td class="table-cell table-cell-name">Christmas 2020</td>
+              <td class="table-cell table-cell-advertiser">
+                <span class="advertiser-name">Food Market</span>
+                <span class="advertiser-group">Krab</span>
+              </td>
+              <td class="table-cell table-cell-description">holiday night during christmas 2020</td>
+              <td class="table-cell table-cell-price">$2000</td>
+              <td class="table-cell table-cell-start-time">2020/12/24 19:30</td>
+              <td class="table-cell table-cell-end-time">2021/01/02 23:00</td>
+              <td class="table-cell table-cell-action">
+                <img class="menu-icon"
+                  src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/menu.svg"
+                  alt="">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
   <script src="./main.js"></script>
 </body>
 
