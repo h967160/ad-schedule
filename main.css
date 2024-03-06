@@ -864,6 +864,38 @@ body {
 #main .main-wrapper .table-row .table-cell-action {
   width: 210px;
   position: relative;
+  /* action's popup */
+}
+#main .main-wrapper .table-row .table-cell-action .action-menu {
+  background-color: #fff;
+  border: 1px solid #cdcdcd;
+  z-index: 999;
+  position: absolute;
+  right: 50%;
+  top: 100%;
+  width: 140px;
+  height: 130px;
+}
+#main .main-wrapper .table-row .table-cell-action .action-menu .action-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+  margin-top: 5px;
+}
+#main .main-wrapper .table-row .table-cell-action .action-menu .actions-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+}
+#main .main-wrapper .table-row .table-cell-action .action-menu img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+#main .main-wrapper .table-row .table-cell-action .hidden {
+  display: none;
 }
 #main .main-wrapper .table-row .sort-icon,
 #main .main-wrapper .table-row .menu-icon {

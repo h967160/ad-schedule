@@ -371,6 +371,38 @@ body {
       .table-cell-action {
         width: 210px;
         position: relative;
+        /* action's popup */
+        .action-menu {
+          background-color: $white;
+          border: 1px solid $light-gray;
+          z-index: 999;
+          position: absolute;
+          right: 50%;
+          top: 100%;
+          width: 140px;
+          height: 130px;
+          .action-menu-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding-left: 12px;
+            margin-top: 5px;
+          }
+          .actions-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            height: 40px;
+          }
+          img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            margin-right: 15px;
+          }
+        }
+        .hidden {
+          display: none;
+        }
       }
       .sort-icon,
       .menu-icon {
