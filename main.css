@@ -157,6 +157,9 @@ body {
 #main .main-wrapper .main-table {
   background: var(--table-background-color);
 }
+#main .main-wrapper .main-table .table-tbody > .checked {
+  background: var(--orange);
+}
 #main .main-wrapper .main-title {
   background: var(--header-color);
   color: var(--header-text-color);
@@ -177,6 +180,9 @@ body {
   top: 0;
   z-index: 1;
   border-bottom: 1px solid var(--border-color);
+}
+#main .main-wrapper .table-row .table-cell-checkbox {
+  width: 50px;
 }
 #main .main-wrapper .table-row .table-cell {
   text-align: center;
@@ -199,6 +205,10 @@ body {
 }
 #main .main-wrapper .table-row .table-cell-description {
   width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 #main .main-wrapper .table-row .table-cell-price {
   width: 140px;

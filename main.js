@@ -44,3 +44,12 @@ darkModeToggle.addEventListener("change", darkModeToggleHandler);
 darkModeImg.addEventListener("click", () => {
   darkModeToggle.click();
 });
+
+// change table row style
+const checkBox = document.querySelector(".table-tbody");
+const selectTable = (event) => {
+  const parent = event.target.closest(".table-row");
+  parent.classList.toggle("checked");
+};
+
+checkBox.addEventListener("change", selectTable);

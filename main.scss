@@ -156,6 +156,9 @@ body {
     .main-table {
       background: var(--table-background-color);
     }
+    .main-table .table-tbody > .checked {
+      background: var(--orange);
+    }
     .main-title {
       background: var(--header-color);
       color: var(--header-text-color);
@@ -176,6 +179,9 @@ body {
       top: 0;
       z-index: 1;
       border-bottom: 1px solid var(--border-color);
+      .table-cell-checkbox {
+        width: 50px;
+      }
       .table-cell {
         text-align: center;
       }
@@ -197,6 +203,10 @@ body {
       }
       .table-cell-description {
         width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
       }
       .table-cell-price {
         width: 140px;
