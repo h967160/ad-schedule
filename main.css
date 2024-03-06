@@ -155,7 +155,7 @@ body {
   overflow-y: scroll;
 }
 #main .main-wrapper .main-table {
-  width: calc(100% - 150px); /**/
+  width: calc(100% - 150px);
   background: var(--table-background-color);
 }
 #main .main-wrapper .main-table .table-tbody > .checked {
@@ -183,9 +183,6 @@ body {
 }
 #main .main-wrapper .table-row {
   height: 50px;
-  position: sticky;
-  top: 0;
-  z-index: 1;
   border-bottom: 1px solid var(--border-color);
 }
 #main .main-wrapper .table-row .table-cell-checkbox {
@@ -237,7 +234,7 @@ body {
 #main .main-wrapper .table-row .table-cell-action .action-menu {
   background: var(--background-white);
   border: 1px solid var(--border-color);
-  z-index: 10;
+  z-index: 1;
   position: absolute;
   right: 50%;
   top: 100%;

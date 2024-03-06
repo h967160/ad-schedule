@@ -66,6 +66,7 @@ td {
 [data-theme="dark"] {
   --body-bg: #202020;
   --body-color: white;
+
   --table-background-color: #3a3a3a;
   --header-color: #2e2e2e;
   --main-text-color: white;
@@ -154,7 +155,7 @@ body {
     height: 80%;
     overflow-y: scroll;
     .main-table {
-      width: calc(100% - 150px); /**/
+      width: calc(100% - 150px);
       background: var(--table-background-color);
     }
     .main-table .table-tbody > .checked {
@@ -182,9 +183,6 @@ body {
     }
     .table-row {
       height: 50px;
-      position: sticky;
-      top: 0;
-      z-index: 1;
       border-bottom: 1px solid var(--border-color);
       .table-cell-checkbox {
         width: 50px;
@@ -234,7 +232,7 @@ body {
         .action-menu {
           background: var(--background-white);
           border: 1px solid var(--border-color);
-          z-index: 10;
+          z-index: 1;
           position: absolute;
           right: 50%;
           top: 100%;
