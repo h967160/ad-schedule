@@ -19,14 +19,6 @@ p {
   padding: 0px;
 }
 
-ul,
-ol,
-li {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
 a,
 a:hover,
 a:focus {
@@ -37,39 +29,6 @@ img {
   width: 100%;
   height: 100%;
   display: block;
-}
-
-.btn,
-button,
-button:focus,
-input:focus,
-textarea:focus,
-select,
-select:focus,
-a:focus {
-  outline: 0px !important;
-}
-
-button {
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-}
-
-button[disabled] {
-  pointer-events: none;
-}
-
-input {
-  padding: 0;
-}
-
-input:required {
-  box-shadow: none;
-}
-
-input:invalid {
-  box-shadow: none;
 }
 
 table {
@@ -83,186 +42,56 @@ td {
   text-align: initial;
 }
 
-/* basic setting */
-$body-bg: #f8f7fc;
-$body-color: #18253d;
-$white: #fff;
-$dark-gray: #4a4a4a;
-$light-gray: #cdcdcd;
-$gray-text: #828282;
-$nav-bg: #03396a;
-$orange: #ff6500;
-
-$sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%,
-);
-
-/* 使用@each 產出css size設定 */
-@each $prop, $abbrev in (width: w, height: h) {
-  @each $num, $val in $sizes {
-    .#{$abbrev}-#{$num} {
-      #{$prop}: $val;
-    }
-  }
+:root {
+  /* basic setting */
+  --body-bg: #f8f7fc;
+  --body-color: #18253d;
+  --table-background-color: #ffffff;
+  --header-color: #cdcdcd;
+  --header-text-color: black;
+  --main-text-color: black;
+  --white: #fff;
+  --dark-gray: #4a4a4a;
+  --light-gray: #cdcdcd;
+  --gray-text: #828282;
+  --table-grey-text: #828282;
+  --zebra-color: #e9e9e9;
+  --background-grey: #f3f3f3;
+  --background-white: white;
+  --orange: #ff6500;
+  --nav-bg: #03396a;
 }
 
-$spacer: 1rem;
-$spacers: (
-  0: 0,
-  1: (
-    $spacer * 0.25,
-  ),
-  2: (
-    $spacer * 0.5,
-  ),
-  3: (
-    $spacer * 0.75,
-  ),
-  4: $spacer,
-  5: (
-    $spacer * 1.25,
-  ),
-  6: (
-    $spacer * 1.5,
-  ),
-  7: (
-    $spacer * 1.75,
-  ),
-  8: (
-    $spacer * 2,
-  ),
-);
-
-/* 使用@each 產出css spacer設定 */
-@each $prop, $abbrev in (margin: m, padding: p) {
-  @each $num, $val in $spacers {
-    .#{$abbrev}-#{$num} {
-      #{$prop}: $val;
-    }
-    .#{$abbrev}t-#{$num} {
-      #{$prop}-top: $val;
-    }
-    .#{$abbrev}r-#{$num} {
-      #{$prop}-right: $val;
-    }
-    .#{$abbrev}b-#{$num} {
-      #{$prop}-bottom: $val;
-    }
-    .#{$abbrev}l-#{$num} {
-      #{$prop}-left: $val;
-    }
-    .#{$abbrev}x-#{$num} {
-      #{$prop}-left: $val;
-      #{$prop}-right: $val;
-    }
-    .#{$abbrev}y-#{$num} {
-      #{$prop}-top: $val;
-      #{$prop}-bottom: $val;
-    }
-  }
-}
-
-%standard-boxshadow {
-  box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
+/* Dark Theme Settings */
+[data-theme="dark"] {
+  --body-bg: #202020;
+  --body-color: white;
+  --table-background-color: #3a3a3a;
+  --header-color: #2e2e2e;
+  --main-text-color: white;
+  --header-text-color: #aaaaaa;
+  --white: white;
+  --dark-gray: #3a3a3a;
+  --light-gray: #e4e4e4;
+  --table-grey-text: rgba(255, 255, 255, 37%);
+  --zebra-color: #575757;
+  --background-white: #6b6b6b;
+  --orange: #ff6500;
+  --nav-bg: #2e2e2e;
 }
 
 html {
   font-size: 16px;
   height: 100%;
+  color: var(--main-text-color);
 }
 
 body {
   height: 100%;
-  background: $body-bg;
-  color: $body-color;
+  background: var(--body-bg);
+  color: var(--body-color);
+
   font-family: "PingFang TC";
-}
-
-.d-none {
-  display: none;
-}
-
-.d-inline {
-  display: inline;
-}
-
-.d-inline-block {
-  display: inline-block;
-}
-
-.d-block {
-  display: block;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.justify-content-start {
-  justify-content: flex-start;
-}
-
-.justify-content-end {
-  justify-content: flex-end;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.justify-content-between {
-  justify-content: space-between;
-}
-
-.justify-content-around {
-  justify-content: space-around;
-}
-
-.align-content-start {
-  align-content: flex-start;
-}
-
-.align-content-end {
-  align-content: flex-end;
-}
-
-.align-content-center {
-  align-content: center;
-}
-
-.align-items-start {
-  align-items: flex-start;
-}
-
-.align-items-end {
-  align-items: flex-end;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.cursor-pointer {
-  cursor: pointer;
 }
 
 #main-app {
@@ -274,8 +103,11 @@ body {
   position: fixed;
   top: 0;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100px;
-  background-color: $nav-bg;
+  background-color: var(--nav-bg);
   padding-top: 30px;
   height: 100%;
   .sidebar-logo {
@@ -284,19 +116,23 @@ body {
     margin-bottom: 83px;
   }
   .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100%;
     img {
       width: 40px;
       height: 40px;
     }
-    .frame-box,
-    .folder-box,
-    .mail-box {
+    .sidebar-menu-icon {
       margin-bottom: 60px;
       padding: 5px;
     }
     .active {
-      background-color: $white;
+      background-color: var(--white);
+    }
+    .sidebar-darkmode-input {
+      display: none;
     }
   }
 }
@@ -318,12 +154,17 @@ body {
     height: 80%;
     overflow-y: scroll;
     .main-table {
-      background-color: $white;
+      background: var(--table-background-color);
+    }
+    .main-title {
+      background: var(--header-color);
+      color: var(--header-text-color);
     }
     .table-header {
-      background-color: $light-gray;
       z-index: 2;
       position: fixed;
+      background: var(--header-color);
+      color: var(--header-text-color);
       img {
         width: 20px;
         height: 20px;
@@ -334,6 +175,7 @@ body {
       position: sticky;
       top: 0;
       z-index: 1;
+      border-bottom: 1px solid var(--border-color);
       .table-cell {
         text-align: center;
       }
@@ -350,7 +192,7 @@ body {
           display: block;
         }
         .advertiser-group {
-          color: $gray-text;
+          color: var(--table-grey-text);
         }
       }
       .table-cell-description {
@@ -373,8 +215,8 @@ body {
         position: relative;
         /* action's popup */
         .action-menu {
-          background-color: $white;
-          border: 1px solid $light-gray;
+          background: var(--background-white);
+          border: 1px solid var(--border-color);
           z-index: 999;
           position: absolute;
           right: 50%;
