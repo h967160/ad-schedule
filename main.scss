@@ -154,6 +154,7 @@ body {
     height: 80%;
     overflow-y: scroll;
     .main-table {
+      width: calc(100% - 150px); /**/
       background: var(--table-background-color);
     }
     .main-table .table-tbody > .checked {
@@ -163,15 +164,21 @@ body {
       background: var(--header-color);
       color: var(--header-text-color);
     }
+    .table-thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
     .table-header {
-      z-index: 2;
-      position: fixed;
       background: var(--header-color);
       color: var(--header-text-color);
       img {
         width: 20px;
         height: 20px;
       }
+    }
+    .table-row:nth-child(even) {
+      background: var(--zebra-color);
     }
     .table-row {
       height: 50px;
@@ -227,7 +234,7 @@ body {
         .action-menu {
           background: var(--background-white);
           border: 1px solid var(--border-color);
-          z-index: 999;
+          z-index: 10;
           position: absolute;
           right: 50%;
           top: 100%;
