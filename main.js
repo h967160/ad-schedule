@@ -4,6 +4,8 @@ const darkModeToggle = document.getElementById("dark-mode-toggle");
 const darkModeImg = document.getElementById("dark-mode-img");
 const logoImg = document.getElementById("logo-img");
 const checkBox = document.querySelector(".table-tbody");
+const activeIcons = document.querySelectorAll(".active-icon");
+
 // Changing image URL according to mode
 const imageUrls = {
   dark: {
@@ -26,21 +28,25 @@ const toggleMenu = () => {
 
 // Toggle between dark and light mode and update img
 const darkModeToggleHandler = (event) => {
-  if (event.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    logoImg.src = imageUrls.dark.logo;
-    darkModeImg.src = imageUrls.dark.darkMode;
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    logoImg.src = imageUrls.light.logo;
-    darkModeImg.src = imageUrls.light.darkMode;
-  }
+  const theme = event.target.checked ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", theme);
+  logoImg.src = imageUrls[theme].logo;
+  darkModeImg.src = imageUrls[theme].darkMode;
 };
 
-// change table row style
+// Change table row style
 const selectTable = (event) => {
   const parent = event.target.closest(".table-row");
   parent.classList.toggle("checked");
+};
+
+// Toggle 'active' class for the clicked element
+const toggleActiveClass = (clickedIcon) => {
+  activeIcons.forEach((icon) => {
+    icon.classList.remove("active");
+  });
+
+  clickedIcon.classList.toggle("active");
 };
 
 // Event listeners
@@ -50,3 +56,10 @@ darkModeImg.addEventListener("click", () => {
   darkModeToggle.click();
 });
 checkBox.addEventListener("change", selectTable);
+
+// Add click event listener to each 'active-icon' element
+activeIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    toggleActiveClass(icon);
+  });
+});
