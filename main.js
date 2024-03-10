@@ -87,6 +87,17 @@ const renderTable = () => {
 // 將 renderTable 的結果插入到 DOM 中
 tableTbody.innerHTML = renderTable();
 
+// Action's popup effect
+const toggleMenu = (icon) => {
+  const actionMenu = icon.nextElementSibling;
+  // 利用 hidden 來切換開關
+  actionMenu.classList.toggle("hidden");
+  // 自動關閉 action-menu
+  setTimeout(function () {
+    actionMenu.classList.add("hidden");
+  }, 3000);
+};
+
 // Toggle between dark and light mode and update img
 const darkModeToggleHandler = (event) => {
   const theme = event.target.checked ? "dark" : "light";
@@ -124,19 +135,10 @@ activeIcons.forEach((icon) => {
   });
 });
 
-// Action's popup effect
-// DOMContentLoaded 事件在這裡等待table render完之後才觸發
-document.addEventListener("DOMContentLoaded", function () {
-  const actionIcons = document.querySelectorAll(".action-icon-img");
-  actionIcons.forEach(function (icon) {
-    icon.addEventListener("click", function (event) {
-      const actionMenu = icon.nextElementSibling; // 找到直接的兄弟元素 .action-menu
-      // 利用 hidden 來切換開關
-      actionMenu.classList.toggle("hidden");
-      // 自動關閉 action-menu
-      setTimeout(function () {
-        actionMenu.classList.add("hidden");
-      }, 3000);
-    });
+// Get all action-icons
+const actionIcons = document.querySelectorAll(".action-icon-img");
+actionIcons.forEach(function (icon) {
+  icon.addEventListener("click", function (event) {
+    toggleMenu(icon);
   });
 });
